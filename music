@@ -1,0 +1,189 @@
+#define NOTE_D0 -1   //音符对应的相应频率
+#define NOTE_D1 523  //NOTE_D表示D调
+#define NOTE_D2 587
+#define NOTE_D3 659
+#define NOTE_D4 698
+#define NOTE_D5 784
+#define NOTE_D6 880
+#define NOTE_D7 988
+
+#define NOTE_DL1 261 //NOTE_DL表示D调LOW
+#define NOTE_DL2 294
+#define NOTE_DL3 329
+#define NOTE_DL4 349
+#define NOTE_DL5 392
+#define NOTE_DL6 440
+#define NOTE_DL7 493
+
+#define NOTE_DH1 1046//NOTE_DH表示D调HIGH
+#define NOTE_DH2 1175
+#define NOTE_DH3 1318
+#define NOTE_DH4 1397
+#define NOTE_DH5 1568
+#define NOTE_DH6 1760
+#define NOTE_DH7 1976
+//该部分是定义是把每个音符和频率值对应起来
+
+#define WHOLE 1 
+#define HALF 0.5 
+#define QUARTER 0.25 
+#define EIGHTH 0.125 
+#define SIXTEENTH 0.625  
+//该部分是对应了节拍
+
+int tune[] =  
+{
+NOTE_DL5,//团
+NOTE_D3,NOTE_D3,NOTE_D3,NOTE_D3,NOTE_D4,NOTE_D5,//结在这里凝
+NOTE_D2,NOTE_DL5,//聚,勤
+NOTE_D2,NOTE_D2,NOTE_D2,NOTE_D2,NOTE_D3,NOTE_D4,//奋从这里蓄
+NOTE_D3,NOTE_D1,//发，给
+NOTE_D6,NOTE_D6,NOTE_D6,NOTE_D6,NOTE_D7,NOTE_DH1,NOTE_DH1,//我一双理想的（最后一个多打了一次）
+NOTE_D5,NOTE_D4,NOTE_D3,NOTE_DL6,//翅膀，追
+NOTE_D4,NOTE_D4,NOTE_D4,NOTE_D4,NOTE_D5,NOTE_D6,NOTE_D6,//赶东方灿烂的（最后一个多打了一次）
+NOTE_D5,NOTE_D2,NOTE_D5,//朝霞，严
+NOTE_D3,NOTE_D3,NOTE_D3,NOTE_D3,NOTE_D4,NOTE_D5,//谨在这里铸
+NOTE_D2,NOTE_DL5,//就，创
+NOTE_D2,NOTE_D2,NOTE_D2,NOTE_D2,NOTE_D3,NOTE_D4,//新从这里萌
+NOTE_D3,NOTE_D1,//芽，给
+NOTE_D6,NOTE_D6,NOTE_D6,NOTE_D6,NOTE_D7,NOTE_DH1,NOTE_DH1,//我一轮初升的（最后一个多打了一次）
+NOTE_D5,NOTE_D4,NOTE_D3,NOTE_DL6,//太阳，沐
+NOTE_D2,NOTE_D2,NOTE_D2,NOTE_D0,NOTE_D3,NOTE_D2,NOTE_D1,NOTE_D1,//浴晨光怒放的（最后一个多打了一次）
+NOTE_DL6,NOTE_D1,NOTE_D1,//百花。厚
+NOTE_DL6,NOTE_D1,NOTE_D6,//德博
+NOTE_D5,NOTE_D4,NOTE_D3,//学，我们
+NOTE_D2,NOTE_D2,NOTE_D1,NOTE_D2,//薪火相
+NOTE_D3,NOTE_D1,//传，敬
+NOTE_D6,NOTE_D7,NOTE_DH1,//业乐
+NOTE_D5,NOTE_D1,NOTE_D1,//群，我们
+NOTE_D6,NOTE_D6,NOTE_D7,NOTE_DH1,//携手万
+NOTE_DH2,NOTE_D3,NOTE_D4,//家，北
+NOTE_D5,NOTE_D5,NOTE_D1,NOTE_D3,NOTE_D4,//邮啊北
+NOTE_D5,NOTE_D1,NOTE_D1,//邮，队队
+NOTE_D6,NOTE_D6,NOTE_D6,NOTE_D7,NOTE_DH1,//鸿雁又出
+NOTE_D5,NOTE_D6,NOTE_D7,//发，传邮
+NOTE_DH1,NOTE_DH1,NOTE_DH1,NOTE_D7,NOTE_D5,//万里的使
+NOTE_D6,NOTE_D4,NOTE_D5,//命，神圣
+NOTE_D6,NOTE_D6,NOTE_D5,NOTE_D4,NOTE_D5,//在海角天
+NOTE_D2,NOTE_D3,NOTE_D4,//涯，北
+NOTE_D5,NOTE_D5,NOTE_DH1,NOTE_D3,NOTE_D4,//邮啊北
+NOTE_D5,NOTE_D1,NOTE_D1,//邮，队队
+NOTE_D6,NOTE_D6,NOTE_D6,NOTE_D7,NOTE_DH1,//鸿雁又出
+NOTE_D5,NOTE_D6,NOTE_D7,//发，传邮
+NOTE_DH1,NOTE_DH1,NOTE_DH1,NOTE_D7,NOTE_D5,//万里的使
+NOTE_D6,NOTE_D4,NOTE_D5,//命，神圣
+NOTE_D6,//在
+NOTE_D7,NOTE_D7,NOTE_D6,NOTE_D7,//海角天
+NOTE_DH1,NOTE_D0,//涯。
+};
+
+float duration[]= 
+{ 
+1,//团
+1+0.5,0.5,0.5+0.25,0.25,0.5+0.25,0.25,//结在这里凝
+1+1+1,1,//聚,勤
+1+0.5,0.5,0.5+0.25,0.25,0.5+0.25,0.25,//奋从这里蓄
+1+1+1,1,//发，给
+1+0.5,0.5,1,0.5,0.5,0.5,//我一双理想的
+1,1,1+0.5,0.5,//翅膀，追
+1+0.5,0.5,1,0.5,0.5,0.5,//赶东方灿烂的
+1,1+1,1,//朝霞，严
+1+0.5,0.5,0.5+0.25,0.25,0.5+0.25,0.25,//谨在这里铸
+1+1+1,1,//就，创
+1+0.5,0.5,0.5+0.25,0.25,0.5+0.25,0.25,//新从这里萌
+1+1+1,1,//芽，给
+1+0.5,0.5,1,0.5,0.5,0.5,//我一轮初升的
+1,1,1+0.5,0.5,//太阳，沐
+1+0.5,0.5,0.5,0.5,0.5,0.5,0.5,//浴晨光怒放的
+1,1+1,1,//百花。厚
+1+1+1,0.5+0.25,0.25,//德博
+1+1+1,0.5,0.5,//学，我们
+1+0.5,0.5,1,1,//薪火相
+1+1+1,1,//传，敬
+1+1+1,0.5+0.25,0.25,//业乐
+1+1+1,0.5,0.5,//群，我们
+1+0.5,0.5,1,1,//携手万
+1+1+1,0.5+0.25,0.25,//家，北
+1+1,0.5,0.5,0.5+0.25,0.25,//邮啊北
+1+1+1,0.5,0.5,//邮，队队
+1+1,0.5,0.5,0.5,0.5,//鸿雁又出
+1+1+1,0.5,0.5,//发，传邮
+0.5,1+1,0.5,0.5,0.5,//万里的使
+1+1+1,0.5,0.5,//命，神圣
+1+1,0.5,0.5,0.5,0.5,//在海角天
+1+1+1,0.5+0.25,0.25,//涯，北
+1+1,0.5,0.5,0.5,0.25,//邮啊北
+1+1+1,0.5,0.5,//邮，队队
+1+1,0.5,0.5,0.5,0.5,//鸿雁又出
+1+1+1+1,0.5,0.5,//发，传邮
+0.5,1+1,0.5,0.5,0.5,//万里的使
+1+1+1,0.5,0.5,//命，神圣
+1+1+1+1,//在
+1,1,0.5,1+0.5,//海角天
+1+1+1,1,//涯。
+};
+//这部分是整首曲子的节拍部分，也定义个序列duration
+
+int length;//这里定义一个变量，后面用来表示共有多少个音符
+int tonePin=7;//蜂鸣器的端口
+const int TrigPin = 2; //发送超声波
+const int EchoPin = 3; //接收超声波
+float cm;
+int ledp=1;
+
+const int SensorPin=8;//触摸开关端口
+int SensorState=0;
+
+void setup()
+{
+ pinMode(tonePin,OUTPUT);//设置蜂鸣器的pin为输出模式
+ pinMode(ledp,OUTPUT);
+ length = sizeof(tune)/sizeof(tune[0]);//这里用了一个sizeof函数，可以查出tone序列里有多少个音符
+ Serial.begin(9600);
+  Serial.println("Initialisation complete.");
+  pinMode(TrigPin, OUTPUT);
+  pinMode(EchoPin, INPUT);
+ pinMode(SensorPin,INPUT);
+}
+void loop() 
+{  
+  digitalWrite(tonePin,HIGH);//我们用的是低电平触发的蜂鸣器，所以初始使它输出高电平，即不出声
+  unsigned char i;
+  int sum=0;
+  for(int i=0;i<3;i++)
+  {
+       // 产生一个10us的高电平脉冲去触发TrigPin
+    digitalWrite(TrigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(TrigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(TrigPin, LOW);// 检测脉冲宽度，并计算出距离
+    cm = pulseIn(EchoPin, HIGH) / 58.0;
+    //通过串口监视器输出
+    sum=sum+cm;
+    delay(100);
+  }
+    Serial.print("Distance:");
+    Serial.println(sum/3.0);
+     for(int x=0;x<length;x++)//循环音符的次数
+     {  
+      SensorState=digitalRead(SensorPin);
+                if(sum/3.0<10)
+               {
+                    if(SensorState==LOW)//触摸开关即乐曲停止
+                    {
+                    tone(tonePin,tune[x]);//此函数依次播放tune序列里的数组，即每个音符
+                    digitalWrite(ledp,HIGH);
+                    delay(400*duration[x]);//每个音符持续的时间
+                    digitalWrite(ledp,LOW);
+                    delay(100*duration[x]);
+                    noTone(tonePin);//停止当前音符，进入下一音符
+                    }                
+               } else
+                  { 
+                        digitalWrite(tonePin, HIGH);//蜂鸣器不叫
+                       
+                  }
+     }
+    delay(1000);//等待1秒后，循环重新开始
+}
